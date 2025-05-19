@@ -183,19 +183,23 @@ function AdminDashboard({ onLogout }) {
           </Col>
         </Row>
 
-        <Row className="mb-4">
-          <Col md={6} className="mx-auto">
-            <InputGroup>
-              <Form.Control
-                type="text"
-                placeholder="ابحث برقم الهاتف..."
-                value={searchPhone}
-                onChange={(e) => setSearchPhone(e.target.value)}
-              />
-              <Button variant="secondary" onClick={() => setSearchPhone('')}>مسح</Button>
-            </InputGroup>
-          </Col>
-        </Row>
+      <Row className="mb-4">
+  <Col md={6} className="mx-auto">
+    <InputGroup className="search-input-group">
+      <Form.Control
+        type="text"
+        placeholder="ابحث برقم الهاتف..."
+        value={searchPhone}
+        onChange={(e) => setSearchPhone(e.target.value)}
+        className="search-input"
+      />
+      <Button variant="outline-light" onClick={() => setSearchPhone('')} className="search-clear-btn">
+        مسح
+      </Button>
+    </InputGroup>
+  </Col>
+</Row>
+
 
         <h4 className="mb-3">أحدث الطلبات</h4>
         {loading ? (

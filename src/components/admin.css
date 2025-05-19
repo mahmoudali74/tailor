@@ -33,12 +33,48 @@
 .order-table tbody tr {
   margin-bottom: 1rem;   /* مسافة بين الصفوف */
 }
-
-.search-bar-wrapper {
-  margin-top: 2.5rem;
-  margin-bottom: 80px;
-  padding: 0 1rem;        /* مسافة أفقية داخل البحث */
+.search-input-group {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  overflow: hidden;
+  background-color: #1e1e1e;
 }
+
+.search-input {
+  border: none;
+  background-color: transparent;
+  color: #eee;
+  padding-left: 1.2rem;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+  opacity: 1;
+}
+
+.search-input:focus {
+  background-color: #2a2a2a;
+  color: #fff;
+  box-shadow: none;
+  outline: none;
+}
+
+.search-clear-btn {
+  border: none;
+  border-radius: 0 30px 30px 0;
+  padding: 0 1.5rem;
+  font-weight: 600;
+  background: #ff4d4f;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.search-clear-btn:hover {
+  background-color: #d9363e;
+}
+
 
 /* responsive adjustments */
 @media (max-width: 768px) {
@@ -78,11 +114,33 @@
   padding: 0.5rem 0;
 }
 .action-buttons > * {
-  margin-inline-end: 0.5rem; /* مسافة أفقية بين الأزرار */
+  margin-inline-end: 0.5rem; /* مسافة أفقية بين الأزرار في الشاشات الكبيرة */
+  border-radius: 20px;       /* شكل بيضاوي */
+  white-space: nowrap;
 }
-
+/* للشاشات الصغيرة: الأزرار تحت بعض وملاصقين */
 @media (max-width: 768px) {
+  .action-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
   .action-buttons > * {
-    margin-bottom: 0.5rem; /* مسافة رأسية عند الشاشات الصغيرة */
+    margin-bottom: 0;          /* إزالة المسافة الرأسية */
+    margin-inline-end: 0;      /* إزالة المسافة الأفقية */
+    width: 100%;
+    border-radius: 25px;       /* شكل بيضاوي كامل */
+  }
+
+  /* لجعل الأزرار متلاصقة بدون فجوات دائرية بين الأزرار */
+  .action-buttons > *:not(:last-child) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .action-buttons > *:not(:first-child) {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
 }
