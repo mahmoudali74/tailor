@@ -1,0 +1,318 @@
+/* src/components/BookingForm.css */
+
+/* خلفية الصفحة بأكملها - تدرج أبيض وأسود */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #7c7979,#0c0c0c );
+  overflow-x: hidden;
+  direction: rtl; /* مهم لجعل الصفحة كلها RTL */
+}
+
+/* container الرئيسي للنموذج */
+.booking-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;  
+  margin: 0;
+  overflow: hidden;
+}
+
+.booking-form-container {
+  width: 100%;
+  max-width: 1100px;
+  height: 700px;
+  display: flex;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  animation: float 4s ease-in-out infinite;
+  background-color: #121212;
+  flex-direction: row-reverse; /* غيرت الاتجاه لعكس */
+}
+
+/* الجانب الأيمن سابقاً صار الأيسر في RTL */
+.left-side {
+  width: 35%;
+  background: linear-gradient(45deg, #000000, #1a1a1a);
+  padding: 60px 30px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  clip-path: polygon(100% 0, 0 0, 30% 100%, 100% 100%); /* عكس الشكل */
+  animation: slideInRight 1s ease-out; /* عكس الانيميشن */
+}
+
+.left-side .rocket-icon {
+  font-size: 60px;
+  margin-bottom: 20px;
+  animation: pulse 2s infinite;
+}
+
+.left-side h4 {
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.left-side p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  color: #cccccc;
+}
+
+/* الجانب الأيسر سابقاً صار الأيمن في RTL */
+.right-side {
+  width: 65%;
+  background: #f9f9f9;
+  padding: 50px 60px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: slideInLeft 1s ease-out; /* عكس الانيميشن */
+  text-align: right; /* محاذاة النص لليمين */
+}
+
+.right-side h2 {
+  text-align: center;
+  color: #222;
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 36px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.right-side .form-label {
+  color: #444;
+  font-weight: 600;
+  margin-bottom: 8px;
+  display: block;
+  font-size: 16px;
+  text-align: right; /* محاذاة النص لليمين */
+}
+
+.right-side .form-control,
+.right-side .form-select {
+  border-radius: 12px;
+  border: 2px solid #ddd;
+  padding: 15px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 50px;
+  transition: all 0.4s ease;
+  background: #fff;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  direction: rtl; /* تأكيد اتجاه الكتابة داخل الحقول */
+  text-align: right; /* محاذاة النص داخل الحقول */
+}
+
+.right-side .form-control:focus,
+.right-side .form-select:focus {
+  border-color: #000000;
+  box-shadow: 0 0 10px rgba(53, 54, 54, 0.5);
+  outline: none;
+  transform: scale(1.03);
+}
+
+.right-side .form-control[type="textarea"] {
+  height: 100px;
+}
+
+.right-side .form-group {
+  margin-bottom: 15px;
+  animation: fadeInUp 0.6s ease-out;
+  animation-delay: calc(var(--i) * 0.15s);
+}
+
+.right-side .gender-section {
+  margin-top: 15px;
+}
+
+.right-side .gender-option {
+  margin-left: 25px; /* بدل margin-right */
+}
+
+.right-side .gender-option .form-check-label {
+  color: #444;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.right-side .submit-btn {
+  background: linear-gradient(45deg, #b3b9c0, #000000);
+  border: none;
+  border-radius: 12px;
+  padding: 15px;
+  font-weight: 700;
+  font-size: 18px;
+  width: 100%;
+  height: 50px;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.right-side .submit-btn:hover {
+  background: linear-gradient(45deg, #000000, #a0abaf);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(207, 210, 212, 0.5);
+}
+
+/* الفوتر */
+.site-footer {
+  background-color: #121212;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 14px;
+  margin-top: 2rem;
+  direction: rtl; /* تأكيد اتجاه الفوتر */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+/* ======== استايلات Responsive ======== */
+
+@media (max-width: 1024px) {
+  .booking-form-container {
+    height: auto;
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .left-side,
+  .right-side {
+    width: 100%;
+    padding: 40px 30px;
+    clip-path: none;
+  }
+
+  .left-side {
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-container {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .booking-form-container {
+    height: auto;
+    width: 100%;
+    border-radius: 20px;
+    flex-direction: column;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  }
+
+  .left-side {
+    padding: 30px 20px;
+  }
+
+  .left-side .rocket-icon {
+    font-size: 48px;
+  }
+
+  .left-side h4 {
+    font-size: 26px;
+  }
+
+  .left-side p {
+    font-size: 14px;
+  }
+
+  .right-side {
+    padding: 30px 20px;
+  }
+
+  .right-side h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .right-side .form-control,
+  .right-side .form-select {
+    height: 45px;
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .right-side .submit-btn {
+    height: 45px;
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .left-side .rocket-icon {
+    font-size: 40px;
+  }
+
+  .left-side h4 {
+    font-size: 22px;
+  }
+
+  .left-side p {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .right-side h2 {
+    font-size: 24px;
+  }
+
+  .right-side .form-control,
+  .right-side .form-select {
+    height: 40px;
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .right-side .submit-btn {
+    height: 40px;
+    font-size: 14px;
+    padding: 10px;
+  }
+}

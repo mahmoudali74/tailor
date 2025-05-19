@@ -1,0 +1,88 @@
+.admin-dashboard {
+  background-color: #121212;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  padding-left: 1rem;   /* إضافة مسافة من الجوانب */
+  padding-right: 1rem;
+  margin-bottom: -60px;
+}
+
+.stat-card {
+  transition: transform 0.3s ease;
+  min-height: 120px;
+  margin-bottom: 1.5rem;  /* مسافة أسفل كل بطاقة إحصائية */
+  padding: 1rem;          /* حشوة داخل البطاقة لراحة العين */
+}
+
+.stat-card:hover {
+  transform: scale(1.03);
+}
+
+.active-filter {
+  border: 3px solid #fff;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.order-table thead th,
+.order-table tbody td {
+  vertical-align: middle;
+  text-align: center;
+  padding: 1rem 0.75rem;   /* زيادة البادينج داخل الخلايا */
+}
+
+.order-table tbody tr {
+  margin-bottom: 1rem;   /* مسافة بين الصفوف */
+}
+
+.search-bar-wrapper {
+  margin-top: 2.5rem;
+  margin-bottom: 80px;
+  padding: 0 1rem;        /* مسافة أفقية داخل البحث */
+}
+
+/* responsive adjustments */
+@media (max-width: 768px) {
+  .stat-card {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+  }
+
+  .order-table {
+    font-size: 0.9rem;
+  }
+
+  .order-table thead th,
+  .order-table tbody td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .search-bar-wrapper {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
+  }
+}
+
+.done {
+  background-color: #19875433 !important; /* أخضر فاتح شفاف */
+  padding: 0.5rem 0;   /* padding أعلى وأسفل للخلايا */
+}
+
+.in-progress {
+  background-color: #0dcaf033 !important; /* أزرق فاتح شفاف */
+  padding: 0.5rem 0;
+}
+
+.pending {
+  background-color: #ffc10733 !important; /* أصفر فاتح شفاف */
+  padding: 0.5rem 0;
+}
+.action-buttons > * {
+  margin-inline-end: 0.5rem; /* مسافة أفقية بين الأزرار */
+}
+
+@media (max-width: 768px) {
+  .action-buttons > * {
+    margin-bottom: 0.5rem; /* مسافة رأسية عند الشاشات الصغيرة */
+  }
+}
